@@ -38,9 +38,9 @@
             // 
             this.buttonManageCoef.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.buttonManageCoef.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonManageCoef.Location = new System.Drawing.Point(100, 90);
+            this.buttonManageCoef.Location = new System.Drawing.Point(25, 90);
             this.buttonManageCoef.Name = "buttonManageCoef";
-            this.buttonManageCoef.Size = new System.Drawing.Size(178, 53);
+            this.buttonManageCoef.Size = new System.Drawing.Size(322, 53);
             this.buttonManageCoef.TabIndex = 0;
             this.buttonManageCoef.Text = "Управление коэффициентами";
             this.buttonManageCoef.UseVisualStyleBackColor = false;

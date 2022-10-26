@@ -28,27 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormManageKoef));
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxJunior = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxMiddle = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBoxSenior = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.textBoxAnaliz = new System.Windows.Forms.TextBox();
+            this.textBoxDeployment = new System.Windows.Forms.TextBox();
+            this.textBoxMoney = new System.Windows.Forms.TextBox();
+            this.textBoxComplex = new System.Windows.Forms.TextBox();
+            this.textBoxTO = new System.Windows.Forms.TextBox();
+            this.textBoxTime = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.buttonSave = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,12 +63,12 @@
             this.listBox1.Size = new System.Drawing.Size(249, 364);
             this.listBox1.TabIndex = 0;
             // 
-            // textBox1
+            // textBoxJunior
             // 
-            this.textBox1.Location = new System.Drawing.Point(387, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(212, 26);
-            this.textBox1.TabIndex = 1;
+            this.textBoxJunior.Location = new System.Drawing.Point(387, 12);
+            this.textBoxJunior.Name = "textBoxJunior";
+            this.textBoxJunior.Size = new System.Drawing.Size(212, 26);
+            this.textBoxJunior.TabIndex = 1;
             // 
             // label1
             // 
@@ -87,12 +89,12 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "middle";
             // 
-            // textBox2
+            // textBoxMiddle
             // 
-            this.textBox2.Location = new System.Drawing.Point(387, 61);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(212, 26);
-            this.textBox2.TabIndex = 4;
+            this.textBoxMiddle.Location = new System.Drawing.Point(387, 61);
+            this.textBoxMiddle.Name = "textBoxMiddle";
+            this.textBoxMiddle.Size = new System.Drawing.Size(212, 26);
+            this.textBoxMiddle.TabIndex = 4;
             // 
             // label3
             // 
@@ -112,12 +114,12 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Исполнитель";
             // 
-            // textBox3
+            // textBoxSenior
             // 
-            this.textBox3.Location = new System.Drawing.Point(387, 113);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(212, 26);
-            this.textBox3.TabIndex = 7;
+            this.textBoxSenior.Location = new System.Drawing.Point(387, 113);
+            this.textBoxSenior.Name = "textBoxSenior";
+            this.textBoxSenior.Size = new System.Drawing.Size(212, 26);
+            this.textBoxSenior.TabIndex = 7;
             // 
             // groupBox1
             // 
@@ -127,12 +129,12 @@
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.textBox9);
-            this.groupBox1.Controls.Add(this.textBox8);
-            this.groupBox1.Controls.Add(this.textBox7);
-            this.groupBox1.Controls.Add(this.textBox6);
-            this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.textBoxTime);
+            this.groupBox1.Controls.Add(this.textBoxTO);
+            this.groupBox1.Controls.Add(this.textBoxComplex);
+            this.groupBox1.Controls.Add(this.textBoxMoney);
+            this.groupBox1.Controls.Add(this.textBoxDeployment);
+            this.groupBox1.Controls.Add(this.textBoxAnaliz);
             this.groupBox1.Location = new System.Drawing.Point(268, 152);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(362, 244);
@@ -140,47 +142,47 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Коэффициенты";
             // 
-            // textBox4
+            // textBoxAnaliz
             // 
-            this.textBox4.Location = new System.Drawing.Point(231, 26);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 26);
-            this.textBox4.TabIndex = 0;
+            this.textBoxAnaliz.Location = new System.Drawing.Point(231, 26);
+            this.textBoxAnaliz.Name = "textBoxAnaliz";
+            this.textBoxAnaliz.Size = new System.Drawing.Size(100, 26);
+            this.textBoxAnaliz.TabIndex = 0;
             // 
-            // textBox5
+            // textBoxDeployment
             // 
-            this.textBox5.Location = new System.Drawing.Point(231, 58);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 26);
-            this.textBox5.TabIndex = 1;
+            this.textBoxDeployment.Location = new System.Drawing.Point(231, 58);
+            this.textBoxDeployment.Name = "textBoxDeployment";
+            this.textBoxDeployment.Size = new System.Drawing.Size(100, 26);
+            this.textBoxDeployment.TabIndex = 1;
             // 
-            // textBox6
+            // textBoxMoney
             // 
-            this.textBox6.Location = new System.Drawing.Point(231, 186);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 26);
-            this.textBox6.TabIndex = 2;
+            this.textBoxMoney.Location = new System.Drawing.Point(231, 186);
+            this.textBoxMoney.Name = "textBoxMoney";
+            this.textBoxMoney.Size = new System.Drawing.Size(100, 26);
+            this.textBoxMoney.TabIndex = 2;
             // 
-            // textBox7
+            // textBoxComplex
             // 
-            this.textBox7.Location = new System.Drawing.Point(231, 122);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 26);
-            this.textBox7.TabIndex = 3;
+            this.textBoxComplex.Location = new System.Drawing.Point(231, 122);
+            this.textBoxComplex.Name = "textBoxComplex";
+            this.textBoxComplex.Size = new System.Drawing.Size(100, 26);
+            this.textBoxComplex.TabIndex = 3;
             // 
-            // textBox8
+            // textBoxTO
             // 
-            this.textBox8.Location = new System.Drawing.Point(231, 90);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 26);
-            this.textBox8.TabIndex = 4;
+            this.textBoxTO.Location = new System.Drawing.Point(231, 90);
+            this.textBoxTO.Name = "textBoxTO";
+            this.textBoxTO.Size = new System.Drawing.Size(100, 26);
+            this.textBoxTO.TabIndex = 4;
             // 
-            // textBox9
+            // textBoxTime
             // 
-            this.textBox9.Location = new System.Drawing.Point(231, 154);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(100, 26);
-            this.textBox9.TabIndex = 5;
+            this.textBoxTime.Location = new System.Drawing.Point(231, 154);
+            this.textBoxTime.Name = "textBoxTime";
+            this.textBoxTime.Size = new System.Drawing.Size(100, 26);
+            this.textBoxTime.TabIndex = 5;
             // 
             // label5
             // 
@@ -236,21 +238,33 @@
             this.label10.TabIndex = 11;
             this.label10.Text = "Денежный эквивалент";
             // 
+            // buttonSave
+            // 
+            this.buttonSave.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.buttonSave.Location = new System.Drawing.Point(16, 402);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(245, 46);
+            this.buttonSave.TabIndex = 9;
+            this.buttonSave.Text = "Сохранить";
+            this.buttonSave.UseVisualStyleBackColor = false;
+            // 
             // FormManageKoef
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(643, 405);
+            this.ClientSize = new System.Drawing.Size(643, 460);
+            this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBoxSenior);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBoxMiddle);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxJunior);
             this.Controls.Add(this.listBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FormManageKoef";
             this.Text = "Управление менеджерами ";
@@ -264,13 +278,13 @@
         #endregion
 
         private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxJunior;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxMiddle;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBoxSenior;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
@@ -278,11 +292,12 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBoxTime;
+        private System.Windows.Forms.TextBox textBoxTO;
+        private System.Windows.Forms.TextBox textBoxComplex;
+        private System.Windows.Forms.TextBox textBoxMoney;
+        private System.Windows.Forms.TextBox textBoxDeployment;
+        private System.Windows.Forms.TextBox textBoxAnaliz;
+        private System.Windows.Forms.Button buttonSave;
     }
 }

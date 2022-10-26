@@ -57,6 +57,8 @@
   <ItemGroup>
     <Compile Include="Controller\AutorizationController.cs" />
     <Compile Include="Controller\IAutorizationView.cs" />
+    <Compile Include="Controller\IManageKoefView.cs" />
+    <Compile Include="Controller\ManageKoefController.cs" />
     <Compile Include="View\AllTasks.cs">
       <SubType>Form</SubType>
     </Compile>

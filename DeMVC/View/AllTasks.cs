@@ -12,7 +12,7 @@ namespace DeMVC.View
 {
     public partial class AllTasks : Form
     {
-        public AllTasks()
+        public AllTasks(Object obj)
         {
             InitializeComponent();
         }

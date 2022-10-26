@@ -1,4 +1,5 @@
 ﻿using DeMVC.Model;
+using DeMVC.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,14 +25,17 @@ namespace DeMVC.Controller
                   p.password.Equals(password)).FirstOrDefault();
                 if (manager != null)
                 {
-
+                    AllTasks window = new AllTasks(manager);
+                    window.Show();
                     return;
                 }
                 Worker worker = db.Worker.Where(p => p.login.Equals(login) &&
                         p.password.Equals(password)).FirstOrDefault();
                 if(worker!=null)
                 {
-                        return;
+                    AllTasks window = new AllTasks(worker);
+                    window.Show();
+                    return;
                 }
             }
         }   

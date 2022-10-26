@@ -15,7 +15,7 @@ namespace DeMVC.Controller
         public AutorizationController(IAutorizationView view)
         {
             _view = view;
-            view.SetController(this);
+            _view.SetController(this);
         }
         public void EnterUser(String login,String password)
         {
@@ -26,16 +26,19 @@ namespace DeMVC.Controller
                 if (manager != null)
                 {
                     AllTasks window = new AllTasks(manager);
-                    window.Show();
-                    return;
+                    _view.HideForm();
+                    window.ShowDialog();
                 }
-                Worker worker = db.Worker.Where(p => p.login.Equals(login) &&
-                        p.password.Equals(password)).FirstOrDefault();
-                if(worker!=null)
+                else
                 {
-                    AllTasks window = new AllTasks(worker);
-                    window.Show();
-                    return;
+                    Worker worker = db.Worker.Where(p => p.login.Equals(login) &&
+                            p.password.Equals(password)).FirstOrDefault();
+                    if (worker != null)
+                    {
+                        AllTasks window = new AllTasks(worker);
+                        _view.HideForm();
+                        window.ShowDialog();
+                    }
                 }
             }
         }   

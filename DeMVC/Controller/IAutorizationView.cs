@@ -12,5 +12,6 @@ namespace DeMVC.Controller
         void SetController(AutorizationController controller);
         string Login { get; set; }
         string Password { get; set; }
+        void HideForm();
     }
 }

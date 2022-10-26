@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DeMVC.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,10 @@ namespace DeMVC.View
         public AllTasks(Object obj)
         {
             InitializeComponent();
+            if(obj is Worker)
+            {
+                buttonManageCoef.Visible =false;
+            }
         }
     }
 }

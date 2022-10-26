@@ -28,6 +28,11 @@ namespace DeMVC
             set { this.textBoxPassword.Text = value; }
         }
 
+        public void HideForm()
+        {
+            this.Hide();
+        }
+
         public void SetController(AutorizationController controller)
         {
             this.controller=controller;

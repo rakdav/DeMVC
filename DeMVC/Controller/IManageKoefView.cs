@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DeMVC.Controller
 {
-    internal interface IManageKoefView
+    public interface IManageKoefView
     {
         void SetController(ManageKoefController controller);
         void UpdateWorkCoef(Work worker);

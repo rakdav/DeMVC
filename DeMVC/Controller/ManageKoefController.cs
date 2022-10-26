@@ -8,21 +8,21 @@ using System.Threading.Tasks;
 
 namespace DeMVC.Controller
 {
-    internal class ManageKoefController
+    public class ManageKoefController
     {
         IManageKoefView _view;
-        IList _works;
+        IList<Work> _works;
         Work _selectedWork;
 
-        public ManageKoefController(IManageKoefView view, IList workers)
+        public ManageKoefController(IManageKoefView view, IList<Work> workers)
         {
             _view = view;
             _works = workers;
             _view.SetController(this);
         }
-        public IList Work
+        public IList<Work> Work
         {
-            get { return ArrayList.ReadOnly(_works); }
+            get { return _works; }
         }
         public void updateViewDatailsValues(Work work)
         {
@@ -53,7 +53,7 @@ namespace DeMVC.Controller
             foreach (Work work in _works)
                 _view.AddWorkToGrid(work);
 
-            _view.SetSelectedWorkInGrid((Work)_works[0]);
+            //_view.SetSelectedWorkInGrid((Work)_works[0]);
         }
         public void SelectedWorkChanged(string selectedWork)
         {
@@ -63,7 +63,7 @@ namespace DeMVC.Controller
                 {
                     _selectedWork = work;
                     updateViewDatailsValues(work);
-                    _view.SetSelectedWorkInGrid(work);
+                    //_view.SetSelectedWorkInGrid(work);
                     break;
                 }
             }

@@ -1,4 +1,5 @@
-﻿using DeMVC.Model;
+﻿using DeMVC.Controller;
+using DeMVC.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,12 +14,33 @@ namespace DeMVC.View
 {
     public partial class AllTasks : Form
     {
+        private Manager manager;
         public AllTasks(Object obj)
         {
             InitializeComponent();
             if(obj is Worker)
             {
                 buttonManageCoef.Visible =false;
+                
+            }
+            else
+            {
+                manager = (Manager)obj;
+            }
+        }
+
+        private void buttonManageCoef_Click(object sender, EventArgs e)
+        {
+            FormManageKoef view=new FormManageKoef();
+            IList<Work> workerList=new List<Work>();
+            using (ModelDB db = new ModelDB())
+            {
+                workerList = db.Work.Where(p => p.loginManager.
+                 Equals(manager.login)).ToList();
+                ManageKoefController controller =
+                new ManageKoefController(view, workerList);
+                controller.LoadView();
+                view.ShowDialog();
             }
         }
     }

@@ -44,6 +44,7 @@
             this.buttonManageCoef.TabIndex = 0;
             this.buttonManageCoef.Text = "Управление коэффициентами";
             this.buttonManageCoef.UseVisualStyleBackColor = false;
+            this.buttonManageCoef.Click += new System.EventHandler(this.buttonManageCoef_Click);
             // 
             // pictureBox1
             // 

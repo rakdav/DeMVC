@@ -22,7 +22,8 @@ namespace DeMVC.View
             this.obj = obj;
             if(obj is Worker)
             {
-                buttonManageCoef.Visible =false;          
+                buttonManageCoef.Visible =false;   
+                
             }
             else
             {
@@ -47,7 +48,7 @@ namespace DeMVC.View
 
         private void tasksButton_Click(object sender, EventArgs e)
         {
-            TaskView taskView = new TaskView(manager);
+            TaskView taskView = new TaskView(obj);
             taskView.ShowDialog();
         }
     }

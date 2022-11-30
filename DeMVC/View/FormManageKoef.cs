@@ -29,19 +29,19 @@ namespace DeMVC.View
             set { textBoxSenior.Text = value.ToString(); }
         }
         public double CoefAnalize {
-            get { return int.Parse(textBoxAnaliz.Text); }
+            get { return double.Parse(textBoxAnaliz.Text); }
             set { textBoxAnaliz.Text = value.ToString(); }
         }
         public double CoefDeployment {
-            get { return int.Parse(textBoxDeployment.Text); }
+            get { return double.Parse(textBoxDeployment.Text); }
             set { textBoxDeployment.Text = value.ToString(); }
         }
         public double CoefSupport {
-            get { return int.Parse(textBoxTO.Text); }
+            get { return double.Parse(textBoxTO.Text); }
             set { textBoxTO.Text = value.ToString(); }
         }
         public double CoefTime {
-            get { return int.Parse(textBoxTime.Text); }
+            get { return double.Parse(textBoxTime.Text); }
             set { textBoxTime.Text = value.ToString(); }
         }
         public int CoefCopmlex {
@@ -63,15 +63,12 @@ namespace DeMVC.View
             _controller = controller;
         }
 
-        public void SetSelectedWorkInGrid(Work work)
+        public void SetSelectedWorkInGrid()
         {
             listBoxWorks.SelectedIndex = 0;
         }
 
-        public void UpdateWorkCoef(Work worker)
-        {
-            
-        }
+        
 
         private void listBoxWorks_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -80,6 +77,16 @@ namespace DeMVC.View
                 string selectes = listBoxWorks.SelectedItem.ToString(); 
                 Work work = db.Work.Where(x => x.loginWorker.Equals(selectes)).FirstOrDefault();
                 _controller.updateViewDatailsValues(work);
+            }
+        }
+
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
+            using (ModelDB db = new ModelDB())
+            {
+                string selectes = listBoxWorks.SelectedItem.ToString();
+                Work work = db.Work.Where(x => x.loginWorker.Equals(selectes)).FirstOrDefault();
+                _controller.UpdateWorkCoef(work);
             }
         }
     }

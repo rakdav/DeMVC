@@ -10,8 +10,7 @@ namespace DeMVC.Controller
     public interface IManageKoefView
     {
         void SetController(ManageKoefController controller);
-        void UpdateWorkCoef(Work worker);
-        void SetSelectedWorkInGrid(Work work);
+        void SetSelectedWorkInGrid();
         void AddWorkToGrid(Work work);
         int Junior { get; set; }
         int Middle { get; set; }

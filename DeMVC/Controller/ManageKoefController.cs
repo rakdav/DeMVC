@@ -2,9 +2,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace DeMVC.Controller
 {
@@ -53,7 +55,7 @@ namespace DeMVC.Controller
             foreach (Work work in _works)
                 _view.AddWorkToGrid(work);
 
-            //_view.SetSelectedWorkInGrid((Work)_works[0]);
+            _view.SetSelectedWorkInGrid();
         }
         public void SelectedWorkChanged(string selectedWork)
         {
@@ -63,9 +65,19 @@ namespace DeMVC.Controller
                 {
                     _selectedWork = work;
                     updateViewDatailsValues(work);
-                    //_view.SetSelectedWorkInGrid(work);
                     break;
                 }
+            }
+        }
+        public async void UpdateWorkCoef(Work worker)
+        {
+            using (ModelDB db = new ModelDB())
+            {
+                Work inBase = db.Work.Where(p => p.loginWorker.Equals(worker.loginWorker)).FirstOrDefault();
+                UpdateWorkWithViewValues(inBase);
+                db.Entry(inBase).State = EntityState.Modified;
+                await db.SaveChangesAsync();
+                MessageBox.Show("Данные сохранены");
             }
         }
     }

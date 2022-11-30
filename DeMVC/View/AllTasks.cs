@@ -15,13 +15,14 @@ namespace DeMVC.View
     public partial class AllTasks : Form
     {
         private Manager manager;
+        private Object obj;
         public AllTasks(Object obj)
         {
             InitializeComponent();
+            this.obj = obj;
             if(obj is Worker)
             {
-                buttonManageCoef.Visible =false;
-                
+                buttonManageCoef.Visible =false;          
             }
             else
             {
@@ -42,6 +43,12 @@ namespace DeMVC.View
                 controller.LoadView();
                 view.ShowDialog();
             }
+        }
+
+        private void tasksButton_Click(object sender, EventArgs e)
+        {
+            TaskView taskView = new TaskView(manager);
+            taskView.ShowDialog();
         }
     }
 }

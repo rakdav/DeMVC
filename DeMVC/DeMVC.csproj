@@ -59,6 +59,9 @@
     <Compile Include="Controller\IAutorizationView.cs" />
     <Compile Include="Controller\IManageKoefView.cs" />
     <Compile Include="Controller\ManageKoefController.cs" />
+    <Compile Include="Model\Filter.cs" />
+    <Compile Include="Model\ManagerFilter.cs" />
+    <Compile Include="Model\WorkerFilter.cs" />
     <Compile Include="View\AllTasks.cs">
       <SubType>Form</SubType>
     </Compile>

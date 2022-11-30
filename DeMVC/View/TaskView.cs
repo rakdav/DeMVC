@@ -50,7 +50,7 @@ namespace DeMVC.View
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(manager!=null) Print();
+            Print();
         }
 
         private void comboBox1_TextChanged(object sender, EventArgs e)
@@ -65,142 +65,49 @@ namespace DeMVC.View
         }
         private void PrintWorker()
         {
-            if(comboBox2.Text.Length==0)
+            WorkerFilter workerFilter = new WorkerFilter();
+            workerFilter.Worker = workerIn;
+            if (comboBox2.Text.Length==0)
             {
-                using (ModelDB db = new ModelDB())
-                {
-                    var query = from task in db.Tasks
-                                join status in db.Status on task.idStatus equals status.id
-                                join worker in db.Worker on task.LoginWorker equals worker.login
-                                join work in db.Work on worker.login equals work.loginWorker
-                                join man in db.Manager on work.loginManager equals man.login
-                                where task.LoginWorker.Equals(workerIn.login)
-                                select new
-                                {
-                                    Title = task.title,
-                                    Status = status.name,
-                                    fioWork = worker.FirstName + " " + worker.MiddleName + " " + worker.LastName,
-                                    fioMan = man.FirstName + " " + man.MiddleName + " " + man.LastName
-                                };
-                    dataGridView1.DataSource = query.ToList();
-                }
+                dataGridView1.DataSource = workerFilter.getWork();
             }
             else
             {
-                using (ModelDB db = new ModelDB())
-                {
-                    var query = from task in db.Tasks
-                                join status in db.Status on task.idStatus equals status.id
-                                join worker in db.Worker on task.LoginWorker equals worker.login
-                                join work in db.Work on worker.login equals work.loginWorker
-                                join man in db.Manager on work.loginManager equals man.login
-                                where task.LoginWorker.Equals(workerIn.login)&&status.name.Equals(comboBox2.SelectedItem.ToString())
-                                select new
-                                {
-                                    Title = task.title,
-                                    Status = status.name,
-                                    fioWork = worker.FirstName + " " + worker.MiddleName + " " + worker.LastName,
-                                    fioMan = man.FirstName + " " + man.MiddleName + " " + man.LastName
-                                };
-                    dataGridView1.DataSource = query.ToList();
-                }
+                dataGridView1.DataSource = workerFilter.getWork(comboBox2.SelectedItem.ToString());
             }
         }
         private void Print()
         {
+            ManagerFilter manage = new ManagerFilter();
+            manage.Manager = manager;
             if (comboBox1.Text.Length != 0 &&
                 comboBox2.Text.Length != 0)
             {
                 string name = comboBox1.SelectedItem.ToString();
                 string st = comboBox2.SelectedItem.ToString();
-                using (ModelDB db = new ModelDB())
-                {
-                    var query = from task in db.Tasks
-                                join status in db.Status on task.idStatus equals status.id
-                                join worker in db.Worker on task.LoginWorker equals worker.login
-                                join work in db.Work on worker.login equals work.loginWorker
-                                join man in db.Manager on work.loginManager equals man.login
-                                where man.login.Equals(manager.login) && worker.FirstName.Equals(name)
-                                && status.name.Equals(st)
-                                select new
-                                {
-                                    Title = task.title,
-                                    Status = status.name,
-                                    fioWork = worker.FirstName + " " + worker.MiddleName + " " + worker.LastName,
-                                    fioMan = man.FirstName + " " + man.MiddleName + " " + man.LastName
-                                };
-                    dataGridView1.DataSource = query.ToList();
-                }
+                dataGridView1.DataSource = manage.GetFilterByWorkerAndStatus(name,st);
             }
             else
             if (comboBox1.Text.Length != 0 &&
                 comboBox2.Text.Length == 0)
             {
                 string name = comboBox1.SelectedItem.ToString();
-                using (ModelDB db = new ModelDB())
-                {
-                    var query = from task in db.Tasks
-                                join status in db.Status on task.idStatus equals status.id
-                                join worker in db.Worker on task.LoginWorker equals worker.login
-                                join work in db.Work on worker.login equals work.loginWorker
-                                join man in db.Manager on work.loginManager equals man.login
-                                where man.login.Equals(manager.login) && worker.FirstName.Equals(name)
-                                select new
-                                {
-                                    Title = task.title,
-                                    Status = status.name,
-                                    fioWork = worker.FirstName + " " + worker.MiddleName + " " + worker.LastName,
-                                    fioMan = man.FirstName + " " + man.MiddleName + " " + man.LastName
-                                };
-                    dataGridView1.DataSource = query.ToList();
-                }
+                dataGridView1.DataSource = manage.GetFilterByWorker(name);
             }
             else
             if (comboBox1.Text.Length == 0 &&
                 comboBox2.Text.Length != 0)
             {
                 string st = comboBox2.SelectedItem.ToString();
-                using (ModelDB db = new ModelDB())
-                {
-                    var query = from task in db.Tasks
-                                join status in db.Status on task.idStatus equals status.id
-                                join worker in db.Worker on task.LoginWorker equals worker.login
-                                join work in db.Work on worker.login equals work.loginWorker
-                                join man in db.Manager on work.loginManager equals man.login
-                                where man.login.Equals(manager.login) && status.name.Equals(st)
-                                select new
-                                {
-                                    Title = task.title,
-                                    Status = status.name,
-                                    fioWork = worker.FirstName + " " + worker.MiddleName + " " + worker.LastName,
-                                    fioMan = man.FirstName + " " + man.MiddleName + " " + man.LastName
-                                };
-                    dataGridView1.DataSource = query.ToList();
-                }
+                
+                dataGridView1.DataSource = manage.GetFilterByStatus(st);
             }
             else
-            {
-                using (ModelDB db = new ModelDB())
-                {
-                    var query = from task in db.Tasks
-                                join status in db.Status on task.idStatus equals status.id
-                                join worker in db.Worker on task.LoginWorker equals worker.login
-                                join work in db.Work on worker.login equals work.loginWorker
-                                join man in db.Manager on work.loginManager equals man.login
-                                where man.login.Equals(manager.login)
-                                select new
-                                {
-                                    Title = task.title,
-                                    Status = status.name,
-                                    fioWork = worker.FirstName + " " + worker.MiddleName + " " + worker.LastName,
-                                    fioMan = man.FirstName + " " + man.MiddleName + " " + man.LastName
-                                };
-                    dataGridView1.DataSource = query.ToList();
-                }
+            { 
+               dataGridView1.DataSource = manage.GetFilters();
+                
             }
         }
-
-
         private void comboBox2_TextChanged(object sender, EventArgs e)
         {
             if (manager != null) Print();

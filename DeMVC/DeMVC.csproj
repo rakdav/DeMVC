@@ -91,6 +91,12 @@
     <Compile Include="View\FormManageKoef.Designer.cs">
       <DependentUpon>FormManageKoef.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\TaskForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\TaskForm.Designer.cs">
+      <DependentUpon>TaskForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\TaskView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +120,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FormManageKoef.resx">
       <DependentUpon>FormManageKoef.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\TaskForm.resx">
+      <DependentUpon>TaskForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\TaskView.resx">
       <DependentUpon>TaskView.cs</DependentUpon>

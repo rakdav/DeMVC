@@ -51,7 +51,9 @@
             this.textBoxDeployment = new System.Windows.Forms.TextBox();
             this.textBoxAnaliz = new System.Windows.Forms.TextBox();
             this.buttonSave = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // listBoxWorks
@@ -66,15 +68,15 @@
             // 
             // textBoxJunior
             // 
-            this.textBoxJunior.Location = new System.Drawing.Point(387, 12);
+            this.textBoxJunior.Location = new System.Drawing.Point(329, 70);
             this.textBoxJunior.Name = "textBoxJunior";
-            this.textBoxJunior.Size = new System.Drawing.Size(212, 26);
+            this.textBoxJunior.Size = new System.Drawing.Size(153, 26);
             this.textBoxJunior.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(336, 12);
+            this.label1.Location = new System.Drawing.Point(278, 70);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(47, 20);
             this.label1.TabIndex = 2;
@@ -83,7 +85,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(331, 61);
+            this.label2.Location = new System.Drawing.Point(273, 119);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 20);
             this.label2.TabIndex = 3;
@@ -91,15 +93,15 @@
             // 
             // textBoxMiddle
             // 
-            this.textBoxMiddle.Location = new System.Drawing.Point(387, 61);
+            this.textBoxMiddle.Location = new System.Drawing.Point(329, 119);
             this.textBoxMiddle.Name = "textBoxMiddle";
-            this.textBoxMiddle.Size = new System.Drawing.Size(212, 26);
+            this.textBoxMiddle.Size = new System.Drawing.Size(153, 26);
             this.textBoxMiddle.TabIndex = 4;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(330, 113);
+            this.label3.Location = new System.Drawing.Point(272, 171);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 20);
             this.label3.TabIndex = 5;
@@ -116,9 +118,9 @@
             // 
             // textBoxSenior
             // 
-            this.textBoxSenior.Location = new System.Drawing.Point(387, 113);
+            this.textBoxSenior.Location = new System.Drawing.Point(329, 171);
             this.textBoxSenior.Name = "textBoxSenior";
-            this.textBoxSenior.Size = new System.Drawing.Size(212, 26);
+            this.textBoxSenior.Size = new System.Drawing.Size(153, 26);
             this.textBoxSenior.TabIndex = 7;
             // 
             // groupBox1
@@ -135,7 +137,7 @@
             this.groupBox1.Controls.Add(this.textBoxMoney);
             this.groupBox1.Controls.Add(this.textBoxDeployment);
             this.groupBox1.Controls.Add(this.textBoxAnaliz);
-            this.groupBox1.Location = new System.Drawing.Point(268, 152);
+            this.groupBox1.Location = new System.Drawing.Point(268, 199);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(362, 244);
             this.groupBox1.TabIndex = 8;
@@ -249,11 +251,21 @@
             this.buttonSave.UseVisualStyleBackColor = false;
             this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(499, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(116, 109);
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
+            // 
             // FormManageKoef
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(643, 460);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.textBoxSenior);
@@ -271,6 +283,7 @@
             this.Text = "Управление менеджерами ";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -300,5 +313,6 @@
         private System.Windows.Forms.TextBox textBoxDeployment;
         private System.Windows.Forms.TextBox textBoxAnaliz;
         private System.Windows.Forms.Button buttonSave;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -113,5 +113,10 @@ namespace DeMVC.View
             if (manager != null) Print();
             if (workerIn != null) PrintWorker();
         }
+
+        private void dataGridView1_DoubleClick(object sender, EventArgs e)
+        {
+
+        }
     }
 }

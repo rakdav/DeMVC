@@ -19,7 +19,10 @@ namespace DeMVC.Model
         public string title { get; set; }
 
         public int Hard { get; set; }
-
+        public string Description { get; set; }
+        public DateTime Srok { get; set; }
+        public DateTime Data { get; set; }
+        public int Period { get; set; }
         public int? idStatus { get; set; }
 
         public int? idComp { get; set; }
@@ -29,5 +32,6 @@ namespace DeMVC.Model
         public virtual Status Status { get; set; }
 
         public virtual Worker Worker { get; set; }
+       
     }
 }

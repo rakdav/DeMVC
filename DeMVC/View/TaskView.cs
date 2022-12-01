@@ -114,9 +114,26 @@ namespace DeMVC.View
             if (workerIn != null) PrintWorker();
         }
 
-        private void dataGridView1_DoubleClick(object sender, EventArgs e)
+      
+
+        private void button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Filter filter=new Filter();
+            filter.Title=dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+            filter.Status=dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+            filter.FioWorker = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+            filter.FioManager = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+            TaskForm taskForm = new TaskForm();
         }
     }
 }

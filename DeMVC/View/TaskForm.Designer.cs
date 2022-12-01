@@ -31,28 +31,28 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TaskForm));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxTiilte = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxDescription = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerSrok = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.dateTimePickerEnd = new System.Windows.Forms.DateTimePicker();
+            this.numericUpDownComplex = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownTime = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxWorker = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBoxStatus = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.comboBoxCharacter = new System.Windows.Forms.ComboBox();
+            this.buttonOk = new System.Windows.Forms.Button();
+            this.buttonCancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownComplex)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTime)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -74,12 +74,12 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Заголовок задачи";
             // 
-            // textBox1
+            // textBoxTiilte
             // 
-            this.textBox1.Location = new System.Drawing.Point(16, 30);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(385, 20);
-            this.textBox1.TabIndex = 2;
+            this.textBoxTiilte.Location = new System.Drawing.Point(16, 30);
+            this.textBoxTiilte.Name = "textBoxTiilte";
+            this.textBoxTiilte.Size = new System.Drawing.Size(385, 20);
+            this.textBoxTiilte.TabIndex = 2;
             // 
             // label2
             // 
@@ -90,13 +90,13 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Описание задачи";
             // 
-            // textBox2
+            // textBoxDescription
             // 
-            this.textBox2.Location = new System.Drawing.Point(16, 69);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(385, 89);
-            this.textBox2.TabIndex = 4;
+            this.textBoxDescription.Location = new System.Drawing.Point(16, 69);
+            this.textBoxDescription.Multiline = true;
+            this.textBoxDescription.Name = "textBoxDescription";
+            this.textBoxDescription.Size = new System.Drawing.Size(385, 89);
+            this.textBoxDescription.TabIndex = 4;
             // 
             // label3
             // 
@@ -107,12 +107,12 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Срок выполнения";
             // 
-            // dateTimePicker1
+            // dateTimePickerSrok
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(16, 177);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(204, 20);
-            this.dateTimePicker1.TabIndex = 6;
+            this.dateTimePickerSrok.Location = new System.Drawing.Point(16, 177);
+            this.dateTimePickerSrok.Name = "dateTimePickerSrok";
+            this.dateTimePickerSrok.Size = new System.Drawing.Size(204, 20);
+            this.dateTimePickerSrok.TabIndex = 6;
             // 
             // label4
             // 
@@ -123,30 +123,30 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Дата выполнения";
             // 
-            // dateTimePicker2
+            // dateTimePickerEnd
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(270, 181);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker2.TabIndex = 8;
+            this.dateTimePickerEnd.Location = new System.Drawing.Point(270, 181);
+            this.dateTimePickerEnd.Name = "dateTimePickerEnd";
+            this.dateTimePickerEnd.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePickerEnd.TabIndex = 8;
             // 
-            // numericUpDown1
+            // numericUpDownComplex
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(16, 220);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
+            this.numericUpDownComplex.Location = new System.Drawing.Point(16, 220);
+            this.numericUpDownComplex.Maximum = new decimal(new int[] {
             50,
             0,
             0,
             0});
-            this.numericUpDown1.Minimum = new decimal(new int[] {
+            this.numericUpDownComplex.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(204, 20);
-            this.numericUpDown1.TabIndex = 9;
-            this.numericUpDown1.Value = new decimal(new int[] {
+            this.numericUpDownComplex.Name = "numericUpDownComplex";
+            this.numericUpDownComplex.Size = new System.Drawing.Size(204, 20);
+            this.numericUpDownComplex.TabIndex = 9;
+            this.numericUpDownComplex.Value = new decimal(new int[] {
             1,
             0,
             0,
@@ -161,12 +161,12 @@
             this.label5.TabIndex = 10;
             this.label5.Text = "Сложность задачи";
             // 
-            // numericUpDown2
+            // numericUpDownTime
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(270, 220);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(200, 20);
-            this.numericUpDown2.TabIndex = 11;
+            this.numericUpDownTime.Location = new System.Drawing.Point(270, 220);
+            this.numericUpDownTime.Name = "numericUpDownTime";
+            this.numericUpDownTime.Size = new System.Drawing.Size(200, 20);
+            this.numericUpDownTime.TabIndex = 11;
             // 
             // label6
             // 
@@ -186,13 +186,13 @@
             this.label7.TabIndex = 13;
             this.label7.Text = "Исполнитель";
             // 
-            // comboBox1
+            // comboBoxWorker
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(16, 259);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(204, 21);
-            this.comboBox1.TabIndex = 14;
+            this.comboBoxWorker.FormattingEnabled = true;
+            this.comboBoxWorker.Location = new System.Drawing.Point(16, 259);
+            this.comboBoxWorker.Name = "comboBoxWorker";
+            this.comboBoxWorker.Size = new System.Drawing.Size(204, 21);
+            this.comboBoxWorker.TabIndex = 14;
             // 
             // label8
             // 
@@ -203,13 +203,13 @@
             this.label8.TabIndex = 15;
             this.label8.Text = "Статус";
             // 
-            // comboBox2
+            // comboBoxStatus
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(270, 259);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(200, 21);
-            this.comboBox2.TabIndex = 16;
+            this.comboBoxStatus.FormattingEnabled = true;
+            this.comboBoxStatus.Location = new System.Drawing.Point(270, 259);
+            this.comboBoxStatus.Name = "comboBoxStatus";
+            this.comboBoxStatus.Size = new System.Drawing.Size(200, 21);
+            this.comboBoxStatus.TabIndex = 16;
             // 
             // label9
             // 
@@ -220,63 +220,65 @@
             this.label9.TabIndex = 17;
             this.label9.Text = "Характер задачи";
             // 
-            // comboBox3
+            // comboBoxCharacter
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(16, 299);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(204, 21);
-            this.comboBox3.TabIndex = 18;
+            this.comboBoxCharacter.FormattingEnabled = true;
+            this.comboBoxCharacter.Location = new System.Drawing.Point(16, 299);
+            this.comboBoxCharacter.Name = "comboBoxCharacter";
+            this.comboBoxCharacter.Size = new System.Drawing.Size(204, 21);
+            this.comboBoxCharacter.TabIndex = 18;
             // 
-            // button1
+            // buttonOk
             // 
-            this.button1.Location = new System.Drawing.Point(16, 345);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(204, 23);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "ОК";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonOk.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.buttonOk.Location = new System.Drawing.Point(16, 345);
+            this.buttonOk.Name = "buttonOk";
+            this.buttonOk.Size = new System.Drawing.Size(204, 23);
+            this.buttonOk.TabIndex = 19;
+            this.buttonOk.Text = "ОК";
+            this.buttonOk.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // buttonCancel
             // 
-            this.button2.Location = new System.Drawing.Point(270, 345);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(200, 23);
-            this.button2.TabIndex = 20;
-            this.button2.Text = "Отмена";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.buttonCancel.Location = new System.Drawing.Point(270, 345);
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.Size = new System.Drawing.Size(200, 23);
+            this.buttonCancel.TabIndex = 20;
+            this.buttonCancel.Text = "Отмена";
+            this.buttonCancel.UseVisualStyleBackColor = true;
             // 
             // TaskForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(483, 389);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox3);
+            this.Controls.Add(this.buttonCancel);
+            this.Controls.Add(this.buttonOk);
+            this.Controls.Add(this.comboBoxCharacter);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.comboBoxStatus);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboBoxWorker);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.numericUpDown2);
+            this.Controls.Add(this.numericUpDownTime);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.numericUpDownComplex);
+            this.Controls.Add(this.dateTimePickerEnd);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dateTimePickerSrok);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBoxDescription);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxTiilte);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Name = "TaskForm";
             this.Text = "Задача";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownComplex)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTime)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -286,24 +288,24 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonOk;
+        private System.Windows.Forms.Button buttonCancel;
+        public System.Windows.Forms.TextBox textBoxTiilte;
+        public System.Windows.Forms.TextBox textBoxDescription;
+        public System.Windows.Forms.DateTimePicker dateTimePickerSrok;
+        public System.Windows.Forms.DateTimePicker dateTimePickerEnd;
+        public System.Windows.Forms.NumericUpDown numericUpDownComplex;
+        public System.Windows.Forms.NumericUpDown numericUpDownTime;
+        public System.Windows.Forms.ComboBox comboBoxWorker;
+        public System.Windows.Forms.ComboBox comboBoxStatus;
+        public System.Windows.Forms.ComboBox comboBoxCharacter;
     }
 }

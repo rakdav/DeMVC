@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DeMVC.Model
 {
-    internal class Filter
+    public class Filter
     {
         public string Title { get; set; }
         public string Status { get; set; }

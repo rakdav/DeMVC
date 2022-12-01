@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -118,7 +119,26 @@ namespace DeMVC.View
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            TaskForm taskForm = new TaskForm();
+            taskForm.ShowDialog();
+            if(taskForm.DialogResult==DialogResult.OK)
+            {
+                using (ModelDB db=new ModelDB())
+                {
+                    Tasks task = new Tasks();
+                    task.title = taskForm.Title;
+                    task.Description = taskForm.Description;
+                    task.Srok = taskForm.Srok;
+                    task.Data = taskForm.Data;
+                    task.Hard = taskForm.Hard;
+                    task.Period = taskForm.Period;
+                    task.LoginWorker = taskForm.Ispolnitel;
+                    task.idStatus = taskForm.Status;
+                    task.idComp = taskForm.Comp;
+                    db.Tasks.Add(task);
+                    db.SaveChanges();
+                }
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -128,12 +148,38 @@ namespace DeMVC.View
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            Filter filter=new Filter();
-            filter.Title=dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
-            filter.Status=dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
-            filter.FioWorker = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
-            filter.FioManager = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
-            TaskForm taskForm = new TaskForm();
+            string Title=dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+               using (ModelDB db=new ModelDB())
+            {
+                Tasks task = db.Tasks.Where(p => p.title.Equals(Title)).FirstOrDefault();
+                TaskForm taskForm = new TaskForm();
+                taskForm.Title=task.title;
+                taskForm.Description = task.Description;
+                taskForm.Srok=task.Srok;
+                taskForm.Data = task.Data;
+                taskForm.Hard = task.Hard;
+                taskForm.Period = task.Period;
+                taskForm.Ispolnitel = task.LoginWorker;
+                taskForm.Status = task.idStatus;
+                taskForm.Comp = task.idComp;
+                taskForm.ShowDialog();
+                if(taskForm.DialogResult==DialogResult.OK)
+                {
+                    task.title = taskForm.Title;
+                    task.Description = taskForm.Description;
+                    task.Srok = taskForm.Srok;
+                    task.Data = taskForm.Data;
+                    task.Hard = taskForm.Hard;
+                    task.Period = taskForm.Period;
+                    task.LoginWorker = taskForm.Ispolnitel;
+                    task.idStatus = taskForm.Status;
+                    task.idComp = taskForm.Comp;
+                    db.Entry(task).State = EntityState.Modified;
+                    db.SaveChanges();
+                }
+            }
+            
+            
         }
     }
 }

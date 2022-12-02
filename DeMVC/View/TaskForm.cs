@@ -35,6 +35,32 @@ namespace DeMVC.View
                 }
             }
         }
+        public TaskForm(Object obj)
+        {
+            InitializeComponent();
+            if (obj is Worker)
+            {
+                comboBoxWorker.Enabled = false;
+            }
+            using (ModelDB db = new ModelDB())
+            {
+                List<Status> statuses = db.Status.ToList();
+                foreach (Status stat in statuses)
+                {
+                    comboBoxStatus.Items.Add(stat.name);
+                }
+                List<Compexity> compexities = db.Compexity.ToList();
+                foreach (var item in compexities)
+                {
+                    comboBoxCharacter.Items.Add(item.name);
+                }
+                List<Worker> workers = db.Worker.ToList();
+                foreach (var item in workers)
+                {
+                    comboBoxWorker.Items.Add(item.FirstName);
+                }
+            }
+        }
         public string Title
         {
             get { return textBoxTiilte.Text; }
@@ -85,7 +111,7 @@ namespace DeMVC.View
                 }
             }
         }
-        public int? Status
+        public int? StatusTask
         {
             get
             {

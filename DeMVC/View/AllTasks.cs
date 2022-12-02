@@ -51,5 +51,11 @@ namespace DeMVC.View
             TaskView taskView = new TaskView(obj);
             taskView.ShowDialog();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            WorkersForm workers = new WorkersForm();
+            workers.Show();
+        }
     }
 }

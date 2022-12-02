@@ -16,9 +16,11 @@ namespace DeMVC.View
     {
         private Manager manager;
         private Worker workerIn;
+        private Object obj;
         public TaskView(Object obj)
         {
             InitializeComponent();
+            this.obj = obj;
             using (ModelDB db = new ModelDB())
             {
                 var workers = from worker in db.Worker
@@ -45,6 +47,8 @@ namespace DeMVC.View
                     workerIn = (Worker)obj;
                     label1.Visible = false;
                     comboBox1.Visible = false;
+                    button1.Visible = false;
+                    button2.Visible = false;
                     PrintWorker();
                 }
         }
@@ -70,7 +74,7 @@ namespace DeMVC.View
             workerFilter.Worker = workerIn;
             if (comboBox2.Text.Length==0)
             {
-                dataGridView1.DataSource = workerFilter.getWork();
+                dataGridView1.DataSource = workerFilter.getWork(workerIn);
             }
             else
             {
@@ -133,7 +137,7 @@ namespace DeMVC.View
                     task.Hard = taskForm.Hard;
                     task.Period = taskForm.Period;
                     task.LoginWorker = taskForm.Ispolnitel;
-                    task.idStatus = taskForm.Status;
+                    task.idStatus = taskForm.StatusTask;
                     task.idComp = taskForm.Comp;
                     db.Tasks.Add(task);
                     db.SaveChanges();
@@ -143,7 +147,13 @@ namespace DeMVC.View
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            string Title = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+            using (ModelDB db = new ModelDB())
+            {
+                Tasks task = db.Tasks.Where(p => p.title.Equals(Title)).FirstOrDefault();
+                db.Tasks.Remove(task);
+                db.SaveChanges();
+            }
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -152,7 +162,7 @@ namespace DeMVC.View
                using (ModelDB db=new ModelDB())
             {
                 Tasks task = db.Tasks.Where(p => p.title.Equals(Title)).FirstOrDefault();
-                TaskForm taskForm = new TaskForm();
+                TaskForm taskForm = new TaskForm(obj);
                 taskForm.Title=task.title;
                 taskForm.Description = task.Description;
                 taskForm.Srok=task.Srok;
@@ -160,7 +170,7 @@ namespace DeMVC.View
                 taskForm.Hard = task.Hard;
                 taskForm.Period = task.Period;
                 taskForm.Ispolnitel = task.LoginWorker;
-                taskForm.Status = task.idStatus;
+                taskForm.StatusTask = task.idStatus;
                 taskForm.Comp = task.idComp;
                 taskForm.ShowDialog();
                 if(taskForm.DialogResult==DialogResult.OK)
@@ -172,14 +182,23 @@ namespace DeMVC.View
                     task.Hard = taskForm.Hard;
                     task.Period = taskForm.Period;
                     task.LoginWorker = taskForm.Ispolnitel;
-                    task.idStatus = taskForm.Status;
+                    task.idStatus = taskForm.StatusTask;
                     task.idComp = taskForm.Comp;
                     db.Entry(task).State = EntityState.Modified;
                     db.SaveChanges();
                 }
             }
-            
-            
+        }
+
+        private void удалитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string Title = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+            using (ModelDB db=new ModelDB())
+            {
+                Tasks task = db.Tasks.Where(p => p.title.Equals(Title)).FirstOrDefault();
+                db.Tasks.Remove(task);
+                db.SaveChanges();
+            }
         }
     }
 }

@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace DeMVC.Model
 {
-    internal class WorkerFilter
+    public class WorkerFilter
     {
         public Worker Worker { get; set; }
-        public List<Filter> getWork()
+        public List<Filter> getWork(Worker workerQuery)
         {
             List<Filter> filters = new List<Filter>();
             using (ModelDB db = new ModelDB())
@@ -19,7 +19,7 @@ namespace DeMVC.Model
                             join worker in db.Worker on task.LoginWorker equals worker.login
                             join work in db.Work on worker.login equals work.loginWorker
                             join man in db.Manager on work.loginManager equals man.login
-                            where task.LoginWorker.Equals(Worker.login)
+                            where task.LoginWorker.Equals(workerQuery.login)
                             select new Filter
                             {
                                 Title = task.title,

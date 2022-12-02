@@ -32,6 +32,7 @@
             this.buttonManageCoef = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tasksButton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,11 +73,24 @@
             this.tasksButton.UseVisualStyleBackColor = false;
             this.tasksButton.Click += new System.EventHandler(this.tasksButton_Click);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Location = new System.Drawing.Point(34, 288);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(429, 56);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Исполнители";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // AllTasks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(512, 407);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.tasksButton);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.buttonManageCoef);
@@ -94,5 +108,6 @@
         private System.Windows.Forms.Button buttonManageCoef;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button tasksButton;
+        private System.Windows.Forms.Button button1;
     }
 }
